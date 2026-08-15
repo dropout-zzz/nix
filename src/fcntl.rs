@@ -186,7 +186,13 @@ libc_bitflags!(
         /// Obtain a file descriptor for low-level access.
         ///
         /// The file itself is not opened and other file operations will fail.
-        #[cfg(any(linux_android, target_os = "redox", target_os = "freebsd", target_os = "fuchsia"))]
+        #[cfg(any(
+            linux_android,
+            target_os = "redox",
+            target_os = "freebsd",
+            target_os = "fuchsia",
+            target_os = "cygwin"
+        ))]
         O_PATH;
         /// Only allow reading.
         ///
